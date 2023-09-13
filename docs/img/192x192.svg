@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="32px" viewBox="0 0 64 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>192x192</title>
+    <g id="192x192" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="1.5,1.5">
+        <path d="M32,0 L0,16 L32,32 L64,16 L32,0 Z" id="Path" stroke="#979797" stroke-width="0.25"></path>
+    </g>
+</svg>

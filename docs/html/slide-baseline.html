@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orchestration Journey</title>
+    <style>
+      :root {
+        --max-height: 700px;
+        --min-width: calc(var(--max-height) / 2);
+        --h1-font-size: 64px;
+        --h2-font-size: 36px;
+        --h3-font-size: 24px;
+
+        --h1-font-weight: 700;
+        --h2-font-weight: 600;
+        --h3-font-weight: 500;
+
+        --primary-color: #394955;
+        --primary-color-alt: #137bad;
+        --secondary-color: #9dadbc;
+        --accent-color: #dc91b9;
+        --background-color: #fafafa;
+
+        --default-border: var(--secondary-color) dotted 0px;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap");
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Roboto", sans-serif;
+        overflow: hidden;
+        background-color: var(--background-color);
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+        height: var(--max-height);
+        aspect-ratio: 16/9;
+        /* background-color: lightcyan; */
+      }
+
+      .card {
+        border: var(--default-border);
+        border-radius: 10px;
+      }
+
+      .explainer,
+      .interactive {
+        height: calc(var(--max-height) - 100px);
+        width: 50%;
+        border: var(--default-border);
+      }
+
+      .card-title,
+      .card-subtitle,
+      .card-command {
+        margin: 25px 50px;
+        border: var(--default-border);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .card-title {
+        color: var(--primary-color);
+        font-size: var(--h1-font-size);
+        height: calc(var(--h1-font-size) * 1.5);
+        font-weight: var(--h1-font-weight);
+
+        --splash-delay: 2;
+        opacity: 0;
+        animation: fadeInUp ease forwards;
+        animation-duration: calc(var(--splash-delay) * 500ms);
+        animation-delay: calc(var(--splash-delay) * 200ms);
+      }
+
+      .card-subtitle {
+        color: var(--primary-color);
+        font-size: var(--h2-font-size);
+        height: calc(var(--h2-font-size) * 3);
+        font-weight: var(--h2-font-weight);
+
+        --splash-delay: 4;
+        opacity: 0;
+        animation: fadeInUp ease forwards;
+        animation-duration: calc(var(--splash-delay) * 500ms);
+        animation-delay: calc(var(--splash-delay) * 200ms);
+      }
+
+      .card-bullet:nth-child(1) {
+        --splash-delay: 6;
+      }
+
+      .card-bullet:nth-child(2) {
+        --splash-delay: 8;
+      }
+
+      .card-bullet:nth-child(3) {
+        --splash-delay: 10;
+      }
+
+      .card-bullet {
+        color: var(--primary-color);
+        line-height: 2.5rem;
+        margin: 25px 50px;
+        font-size: var(--h3-font-size);
+        font-weight: var(--h3-font-weight);
+        border: var(--default-border);
+        border-radius: 10px;
+
+        opacity: 0;
+        animation: fadeInUp ease forwards;
+        animation-duration: calc(var(--splash-delay) * 500ms);
+        animation-delay: calc(var(--splash-delay) * 200ms);
+      }
+
+      .interactive {
+        max-width: 600px;
+        max-height: 600px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        background-color: var(--background-color);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='32'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23137bad' stroke-dasharray='2,2' stroke-width='.15' d='M32,0 L0,16 L32,32 L64,16 L32,0 Z'/%3E%3C/svg%3E");
+        box-shadow: inset 0 0 10px 10px var(--background-color);
+
+        --splash-delay: 10;
+        opacity: 0;
+        animation: fade-in ease forwards;
+        animation-duration: calc(var(--splash-delay) * 200ms);
+        animation-delay: calc(var(--splash-delay) * 200ms);
+      }
+
+      .card-image {
+        filter: grayscale(90%);
+      }
+
+      .card-image:hover {
+        filter: grayscale(0);
+      }
+
+
+      .card-image img {
+        max-width: 500px;
+        max-height: 500px;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30%);
+        }
+
+        30%,
+        50%,
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .box-outer-shadow {
+        filter: drop-shadow(1px 2px 5px rgb(0 0 0 / 1));
+      }
+
+      .top-inner-shadow {
+        box-shadow: 10 10 15px 6px inset rgba(255, 0, 96, 0.8)"
+
+          /* filter: drop-shadow(1px -1px 3px rgb(255 255 255 / 1)); */
+      }
+    </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- <script src=https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js></script> -->
+
+  </head>
+
+  <body>
+    <section>
+      <div class="card explainer">
+        <div class="card-title">Lorem ipsum</div>
+        <div class="card-subtitle">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </div>
+        <div class="card-bullets">
+          <ul>
+            <li class="card-bullet" style="">
+              Card Bullet 1, Lorem ipsum, dolor sit amet consectetur adipisicing
+              elit. Consectetur modi nemo esse mollitia laboriosam!
+            </li>
+            <li class="card-bullet">
+              Card Bullet 2, Nobis commodi esse illo aliquid eveniet quae fuga
+              enim nostrum sequi facilis quam, porro sed assumenda.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card interactive">
+        <div class="card-image">
+          <img src="img/square_2x2.svg" alt="">
+          <!-- <lottie-player id="firstlottie" src="2.json" background=“Transparent” speed="0.25" style="width: 500px; height: 500px"
+            direction="1" mode="bounce" loop autoplay>
+          </lottie-player> -->
+        </div>
+      </div>
+    </section>
+    <!-- <script>
+      LottieInteractivity.create({
+        player: "#firstlottie",
+        mode: "cursor",
+        actions: [
+          {
+            type: "hover",
+            forceFlag: false
+          }
+        ]
+      });
+    </script> -->
+
+  </body>
+
+</html>
