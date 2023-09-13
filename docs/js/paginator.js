@@ -9,7 +9,8 @@ const track_pages = [
         "slide-7",
         "slide-8",
         "slide-9",
-        "slide-10"
+        "slide-10",
+        "slide-11"
     ]
 ];
 
