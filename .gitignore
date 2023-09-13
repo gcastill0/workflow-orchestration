@@ -28,7 +28,9 @@
 # Instruqt Track 
 ############################
 hashicorp
-iac-sampler
+iac-sampler-prod
+# It is OK to share the dev
+# track without any IDs.
 
 ############################
 # Notes that may contain 

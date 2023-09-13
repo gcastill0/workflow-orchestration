@@ -16,5 +16,5 @@ window.onload = function () {
     svg_diagram
       .getAnimations({ subtree: true })
       .map((animation) => animation.finished)
-  ).then(() => window.location.replace("slide-1.html"));
+  ).then(() => window.location.replace("html/slide-1.html"));
 };
