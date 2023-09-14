@@ -27,6 +27,7 @@
 }
 
 body {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -41,7 +42,6 @@ section {
   align-items: center;
   height: var(--max-height);
   aspect-ratio: 16/9;
-  /* padding-top: 50px; */
 }
 
 .card {
@@ -227,4 +227,29 @@ section {
     bottom: 50px;
     left: 50px;
     cursor: pointer;
+}
+
+.lightbox {
+  position: absolute;
+  width: 1200px;
+  aspect-ratio: 16/9;
+  background-color: white;
+  flex-basis: auto;
+  z-index: 100;
+  padding-top: 50px;
+  box-shadow: 0 20px 50px var(--gray-05);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(2rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.lightgox-svg svg{
+  max-height: 600px;
 }
